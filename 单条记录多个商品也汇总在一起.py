@@ -71,7 +71,7 @@ def read_file():
                 tmp = [key]
                 l = g[key]
                 products = flatten([i[header.index('商品型号')].split(';') for i in l])
-                product_count = flatten([i[header.index('商品件数')].split(';') for i in l])
+                product_count = flatten([str(i[header.index('商品件数')]).split(';') for i in l])
                 addresses = flatten([i[header.index('收货/提货详细地址')].split(';') for i in l])
                 for i, x in enumerate(products):
                     if x in all_products:
